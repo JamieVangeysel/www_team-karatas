@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'ka-root',
   templateUrl: './app.html',
   standalone: false,
-  styleUrl: './app.css'
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class App {
-  protected title = 'team-karatas';
+  constructor(private router: Router) {
+  }
 }
